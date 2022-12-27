@@ -2,7 +2,6 @@ package blackjack.domain.card
 
 class Deck {
 
-    private val numbers = CardNumber.values()
     private val deck = builder()
 
     fun draw(): Card {
@@ -33,5 +32,23 @@ class Deck {
 
     private fun diamond(): List<Card> {
         return numbers.map { Card(it, CardType.DIAMOND) }
+    }
+
+    companion object {
+        val numbers = listOf(
+            Ace(),
+            Two(),
+            Three(),
+            Four(),
+            Five(),
+            Six(),
+            Seven(),
+            Eight(),
+            Nine(),
+            Ten(),
+            Jack(),
+            Queen(),
+            King()
+        )
     }
 }
